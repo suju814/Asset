@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+{% for project in userlist %}
+    <li><a  >{{ project.title }}</a></li>
+
+{% endfor %}
+
+ 
+                           {% for project in userlist %}
+                           <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="dashboard-analytics.html" data-toggle="dropdown" data-i18n="Analytics"><i data-feather="folder"></i><span data-i18n="Analytics">{{ project.category }}</span></a></li>
+
+                      
+                       
+                                
+                                     <ul class="dropdown-menu">
+                                         {% for project in sub_userlist %}
+                                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="app-invoice-list.html" data-toggle="dropdown" data-i18n="List"><i data-feather="circle"></i><span data-i18n="List">List</span></a>
+                                    </li>
+                                     {% endfor %}
+                                </ul>
+                             
+                                {% endfor %}
+
+</body>
+</html>

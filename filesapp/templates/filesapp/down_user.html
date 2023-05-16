@@ -1,0 +1,171 @@
+{% extends "filesapp/base.html" %}
+{% load static %}
+{% block content %}
+
+ <!-- BEGIN: Content-->
+    <div class="app-content content ">
+      <div class="content-overlay"></div>
+      <div class="header-navbar-shadow"></div>
+      
+          
+        <div class="content-body"><div class="row">
+  <div class="col-12">
+
+  </div>
+</div>
+<div class="row match-height">
+  <div class="col-sm-1 ">
+</div>
+<div class="col-sm-2">
+      <div class="card text-center">
+        <div class="card-body">
+          <div class="avatar bg-light-info p-50 mb-1">
+            <div class="avatar-content">
+              <i data-feather="image"  class="font-medium-5"></i>
+            </div>
+          </div>
+         <a > <h4 class="font-weight-bolder"  >{{image}}</h4></a>
+         <p class="card-text">Images</p>
+
+         
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-2 col-md-4 col-sm-6">
+      <div class="card text-center">
+        <div class="card-body">
+          <div class="avatar bg-light-primary p-50 mb-1">
+            <div class="avatar-content">
+              <i data-feather="download"  class="font-medium-5"></i>
+            </div>
+          </div>
+         <a > <h4 class="font-weight-bolder"  >{{dow}}</h4></a>
+         <p class="card-text">Downloads</p>
+         
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-2 col-md-4 col-sm-6">
+      <div class="card text-center">
+        <div class="card-body">
+          <div class="avatar bg-light-success p-50 mb-1">
+            <div class="avatar-content">
+              <i data-feather="users"  class="font-medium-5"></i>
+            </div>
+          </div>
+         <a > <h4 class="font-weight-bolder"  >{{userss}}</h4></a>
+         <p class="card-text">Users</p>
+         
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-2 col-md-4 col-sm-6">
+      <div class="card text-center">
+        <div class="card-body">
+          <div class="avatar bg-light-warning p-50 mb-1">
+            <div class="avatar-content">
+              <i data-feather="list"  class="font-medium-5"></i>
+            </div>
+          </div>
+         <a > <h4 class="font-weight-bolder"  >{{cate}}</h4></a>
+         <p class="card-text">Category</p>
+         
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-2 col-md-4 col-sm-6">
+      <div class="card text-center">
+        <div class="card-body">
+          <div class="avatar bg-light-danger p-50 mb-1">
+            <div class="avatar-content">
+              <i data-feather="list"  class="font-medium-5"></i>
+            </div>
+          </div>
+         <a > <h4 class="font-weight-bolder"  >{{subcat}}</h4></a>
+         <p class="card-text">Sub Category</p>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Basic table -->
+<div class="row match-height">
+    <!-- Company Table Card -->
+    <div class="col-lg-12 col-12">
+      <div class="card card-company-table">
+        <div class="card-body p-0">
+          <div class="table-responsive">
+            <table class="table" id="sap">
+
+              <thead>
+                <tr>
+                  <th>Image Tags</th>
+                  <th>Email</th>
+                  <th>Download</th>
+                  <th>Category</th>
+                  <th>Sub Category</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for i in s %}
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <div class="avatar rounded">
+                        <div class="avatar-content">
+                          <img src="{{ i.po.image.url }}" style="width: 100%;"  />
+                        </div>
+                      </div>
+                      <div>
+                        
+                        <div class="font-weight-bolder ">{{i.po.tags}}</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <div class="avatar bg-light-primary mr-1">
+                        <div class="avatar-content">
+                          <i data-feather="mail" class="font-medium-3"></i>
+                        </div>
+                      </div>
+                      <span>{{i.user.email}}</span>
+                    </div>
+                  </td>
+                  <td class="text-nowrap">
+                    <div class="d-flex align-items-center">
+                      <div class="avatar bg-light-primary mr-1">
+                        <div class="avatar-content">
+                          <i data-feather="arrow-down-circle" class="font-medium-3"></i>
+                        </div>
+                      </div>
+                      <span>{{i.total_downloads}}</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <span class="font-weight-bolder mr-1">{{i.po.category1}}</span>
+                      <i data-feather="trending-down" class="text-danger font-medium-1"></i>
+                    </div>
+                  </td>
+                
+                <td>
+                    <div class="d-flex align-items-center">
+                      <span class="font-weight-bolder mr-1">{{i.po.sub}}</span>
+                      <i data-feather="trending-down" class="text-danger font-medium-1"></i>
+                    </div>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+{% endblock %}

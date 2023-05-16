@@ -1,0 +1,184 @@
+{% extends "filesapp/base.html" %}
+{% load static %}
+{% load ospath %}
+{% block content %}
+{%load crispy_forms_tags %}
+   
+    
+
+    
+
+    <!-- BEGIN: Content-->
+    <div class="app-content content ecommerce-application">
+      <div class="content-overlay"></div>
+      <div class="header-navbar-shadow"></div>
+      
+        <div class="content-detached" style="width: 100%">
+          <div class="content-body"><!-- E-commerce Content Section Starts -->
+
+<!-- E-commerce Content Section Starts -->
+
+<!-- background Overlay when sidebar is shown  starts-->
+<div class="body-content-overlay"></div>
+<!-- background Overlay when sidebar is shown  ends-->
+<div class="content-wrapper">
+        <div class="content-header row">
+          <div class="content-header-left col-md-9 col-12 mb-2">
+            {% if  dep %}
+            <div class="row breadcrumbs-top">
+              <div class="col-12">
+                <h2 class="content-header-title float-left mb-0"> {{dep}}</h2>
+                <div class="breadcrumb-wrapper">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">{{sub}}</a>
+                    </li>
+                    
+                  </ol>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+          
+        </div>
+      
+        
+<div class="row">
+  {% for i in p %}
+    <div class="col-xl-2 col-md-4 col-sm-6">
+      <div class="card text-center">
+        <div class="card-body">
+          <div class="avatar bg-light-info p-50 mb-1">
+            <div class="avatar-content">
+              <i data-feather="image"  class="font-medium-5"></i>
+            </div>
+          </div>
+         <a href="{%  url 'filesapp:sample_cat' pk=i.id %}"> <h2 class="font-weight-bolder"  >{{i.sub_category}}</h2></a>
+         
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    
+    
+    
+    
+    
+  </div>
+<!-- E-commerce Search Bar Starts -->
+<section id="ecommerce-searchbar" class="ecommerce-searchbar">
+  <div class="row mt-1">
+    <div class="col-sm-12">
+      <div class="input-group input-group-merge">
+        <input
+          type="text"
+          class="form-control search-product searchbox-input"
+          id="searchbuttonid"
+          placeholder="Search Product"
+          aria-label="Search..."
+          aria-describedby="shop-search"
+          onkeyup="buttonUp();"
+        />
+        
+        <div class="input-group-append">
+          <span class="input-group-text"><i data-feather="search" class="text-muted"></i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- E-commerce Search Bar Ends -->
+
+<!-- E-commerce Products Starts -->
+<section id="ecommerce-products"  class="grid-view">
+      {% for imagess in images %}
+  <div class="card ecommerce-card ">
+  <div class="with-bg-size" style="background-image: url('{{imagess.image.url}}');
+  width: 100%;
+  height:200px;
+  background-position: center;
+  /* Make the background image cover the area of the <div>, and clip the excess */
+  background-size: cover;"></div>
+       
+    
+    <div class="card-body">
+      <div class="item-wrapper">
+        <div class="item-rating">
+          
+        </div>
+        <div>
+          <h6 class="item-price">{{imagess.filename |noext}}</h6>
+        </div>
+      </div>
+      <h6 class="item-name">
+        <a class="text-body" href="">Tags:{{imagess.tags}}</a>
+        <span class="card-text item-company">By <a href="javascript:void(0)" class="company-name">Apple</a></span>
+      </h6>
+      <p class="card-text item-description">
+       
+      </p>
+    </div>
+    
+      
+     
+<div class="row">
+<div class="col-6">
+<!-- <h5 class="f-w-700 m-b-0"><center><a href="{% url 'file_download:file_response_download' {{ imagess.pk }} {{ imagess.image.url }} % }" ><i class="fas fa-download m-r-10"></i></center></h5> -->
+  
+  <h5 class="f-w-700 m-b-0"><center><a href="/file/{{imagess.pk}}/download{{ imagess.image.url }}/" ><i class="fas fa-download m-r-10"></i></center></h5>
+    <!-- <h6 class="item-price">{{downloads.total_downloads}}</h6> -->
+
+</a>
+</div>
+
+ <div class="col-6 b-l-default">
+
+<h5 class="f-w-700 m-b-0"><center><a  href="{% url 'filesapp:view_details' imagess.pk %}"><i class="fas fa-bars m-r-10"></i></center></a></h5>
+</div>
+</div>
+   
+  </div>
+  
+  
+  
+  {% endfor %}
+  
+</section>
+
+<!-- E-commerce Pagination Ends -->
+
+          </div>
+        </div>
+        
+<!-- Ecommerce Sidebar Ends -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END: Content-->
+
+
+<script type="text/javascript">
+   var buttonUp = () => {
+    const input = document.querySelector(".searchbox-input");
+    const cards = document.getElementsByClassName("card");
+    let filter = input.value
+    for (let i = 0; i < cards.length; i++) {
+        let title = cards[i].querySelector(".card-body");
+        if (title.innerText.indexOf(filter) > -1) {
+            cards[i].classList.remove("d-none")
+        } else {
+            cards[i].classList.add("d-none")
+        }
+    }
+}
+</script>
+   
+
+    
+
+  <!-- Footer -->
+  
+{% endblock %}
+    

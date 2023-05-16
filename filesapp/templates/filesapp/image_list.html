@@ -1,0 +1,180 @@
+{% extends 'filesapp/base.html' %}
+
+{% block content %}
+{% load static %}
+{% load ospath %}
+
+
+    <div class="app-content content file-manager-application">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-area-wrapper">
+            <div class="sidebar-left">
+                <div class="sidebar">
+                    <div class="sidebar-file-manager">
+                        <div class="sidebar-inner">
+                            <!-- sidebar menu links starts -->
+                            <!-- add file button -->
+                            <div class="dropdown dropdown-actions">
+                                
+                                <div class="dropdown-menu" aria-labelledby="addNewFile">
+                                    
+                                    <div class="dropdown-item">
+                                       
+                                    <h1> HELLO </h1>
+                                </div>
+                            </div>
+                            <!-- add file button ends -->
+
+                            <!-- sidebar list items starts  -->
+                         
+                                <!-- links for file manager sidebar ends -->
+
+                                <!-- storage status of file manager starts-->
+                              
+                                <!-- storage status of file manager ends-->
+                            </div>
+                            <!-- side bar list items ends  -->
+                            <!-- sidebar menu links ends -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        
+                    <div class="content-header row">
+                    </div>
+                    <div class="content-body">
+                        <!-- overlay container -->
+                        <div class="body-content-overlay"></div>
+
+                        <!-- file manager app content starts -->
+                        <div class="file-manager-main-content">
+                            <!-- search area start -->
+                            <div class="file-manager-content-header d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <
+                                    <div class="input-group input-group-merge shadow-none m-0 flex-grow-1">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text border-0">
+                                                <i data-feather="search"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control files-filter border-0 bg-transparent" placeholder="Search" />
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="file-actions">
+                                        <i data-feather="arrow-down-circle" class="font-medium-2 cursor-pointer d-sm-inline-block d-none mr-50"></i>
+                                        <i data-feather="trash" class="font-medium-2 cursor-pointer d-sm-inline-block d-none mr-50"></i>
+                                        <i data-feather="alert-circle" class="font-medium-2 cursor-pointer d-sm-inline-block d-none" data-toggle="modal" data-target="#app-file-manager-info-sidebar"></i>
+                                        <div class="dropdown d-inline-block">
+                                            <i class="font-medium-2 cursor-pointer" data-feather="more-vertical" role="button" id="fileActions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            </i>
+                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="fileActions">
+                                                <a class="dropdown-item" href="javascript:void(0);">
+                                                    <i data-feather="move" class="cursor-pointer mr-50"></i>
+                                                    <span class="align-middle">Open with</span>
+                                                </a>
+                                                <a class="dropdown-item d-sm-none d-block" href="javascript:void(0);" data-toggle="modal" data-target="#app-file-manager-info-sidebar">
+                                                    <i data-feather="alert-circle" class="cursor-pointer mr-50"></i>
+                                                    <span class="align-middle">More Options</span>
+                                                </a>
+                                                <a class="dropdown-item d-sm-none d-block" href="javascript:void(0);">
+                                                    <i data-feather="trash" class="cursor-pointer mr-50"></i>
+                                                    <span class="align-middle">Delete</span>
+                                                </a>
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="javascript:void(0);">
+                                                    <i data-feather="plus" class="cursor-pointer mr-50"></i>
+                                                    <span class="align-middle">Add shortcut</span>
+                                                </a>
+                                                <a class="dropdown-item" href="javascript:void(0);">
+                                                    <i data-feather="folder-plus" class="cursor-pointer mr-50"></i>
+                                                    <span class="align-middle">Move to</span>
+                                                </a>
+                                                <a class="dropdown-item" href="javascript:void(0);">
+                                                    <i data-feather="star" class="cursor-pointer mr-50"></i>
+                                                    <span class="align-middle">Add to starred</span>
+                                                </a>
+                                                <a class="dropdown-item" href="javascript:void(0);">
+                                                    <i data-feather="droplet" class="cursor-pointer mr-50"></i>
+                                                    <span class="align-middle">Change color</span>
+                                                </a>
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="javascript:void(0);">
+                                                    <i data-feather="download" class="cursor-pointer mr-50"></i>
+                                                    <span class="align-middle">Download</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btn-group btn-group-toggle view-toggle ml-50" data-toggle="buttons">
+                                        <label class="btn btn-outline-primary p-50 btn-sm active">
+                                            <input type="radio" name="view-btn-radio" data-view="grid" checked />
+                                            <i data-feather="grid"></i>
+                                        </label>
+                                        <label class="btn btn-outline-primary p-50 btn-sm">
+                                            <input type="radio" name="view-btn-radio" data-view="list" />
+                                            <i data-feather="list"></i>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- search area ends here -->
+
+                            <div class="file-manager-content-body">
+<!-- drives area starts-->
+<div class="drives">
+   <div class="row">
+      <div class="col-lg-3 col-md-6 col-12">
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+      </div>
+   </div>
+</div>
+<!-- drives area ends-->
+<!-- Folders Container Starts -->
+<!-- /Folders Container Ends -->
+<!-- Files Container Starts -->
+<style>
+  
+    h3 {
+  letter-spacing: 8px;
+}
+  div.c {
+  text-align: right;
+}
+}
+</style>
+
+<div class="view-container">
+<h6 class="files-section-title mt-2 mb-75">Files</h6>
+<div class="card file-manager-item file">
+   
+   
+   {% for imagess in images %}
+   <div class="card-body">
+      
+      <!-- <h6 class="card-subtitle text-muted"><a>{{ imagess.tags }}</a></h6> -->
+      
+      <img class="img-fluid" src="{{ imagess.image.url }}" alt="Card image cap"  />
+  
+   </div>
+
+<div class="card file-manager-item file">
+<div class="card-img-top file-logo-wrapper">
+  <h4 class="card-title">{{ imagess.tags }}<h4>
+    <div class="c">
+    <h3>
+   <a  href="{% url 'filesapp:view_details' imagess.pk %}"><i class="fas fa-bars m-r-10"></i></a>
+      <a href="/file/download{{ imagess.image.url }}/" ><i class="fas fa-download m-r-10"></i>
+   </h3>
+ </div>
+</div>
+
+{% endfor %}
+</center>
+
+
+{% endblock %}

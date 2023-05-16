@@ -1,0 +1,256 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<!-- Mirrored from colorlib.com/polygon/admindek/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Dec 2019 16:07:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
+<head>
+    <title>Assert Management</title>
+    <link rel="shortcut icon" href="https://www.byjusdwa.com/dwa/assets/images/tnl132.png">
+
+
+
+
+
+<!--[if lt IE 10]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Admindek Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
+<meta name="keywords" content="flat ui, admin Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+<meta name="author" content="colorlib" />
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="{% static 'temp/css/bootstrap.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'temp/css/waves.min.css' %}" type="text/css" media="all">
+
+<link rel="stylesheet" type="text/css" href="{% static 'temp/css/feather.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static 'temp/css/font-awesome-n.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'temp/css/chartist.css' %}" type="text/css" media="all">
+
+<link rel="stylesheet" type="text/css" href="{% static 'temp/css/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'temp/css/widget.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'temp/css/pages.css' %}">
+{% block contents %}
+  {% endblock %}
+  <script type="text/javascript">
+      jQuery('document').ready(function() {
+    jQuery('#my-accordion').on('show hide', function() {
+        jQuery(this).css('height', 'auto');
+    });
+    jQuery('#my-accordion').collapse({ parent: true, toggle: true }); 
+});
+  </script>
+</head>
+<body oncontextmenu="return false;">
+
+<div class="loader-bg">
+<div class="loader-bar"></div>
+</div>
+
+<div id="pcoded" class="pcoded">
+<div class="pcoded-overlay-box"></div>
+<div class="pcoded-container navbar-wrapper" style="background-color:pink">
+
+<nav class="navbar header-navbar pcoded-header">
+<div class="navbar-wrapper"  style="background-color:">
+<div class="navbar-logo" style="background-color:#823287">
+<a  href="{% url 'file_upload:home' %}" >
+<img class="img-fluid" src="{% static 'img/s.png' %}" width="171"  alt="Theme-Logo" />
+</a>
+<a class="mobile-menu" id="mobile-collapse" href="#!">
+<i class="feather icon-menu icon-toggle-right"></i>
+</a>
+<a class="mobile-options waves-effect waves-light">
+<i class="feather icon-more-horizontal"></i>
+</a>
+</div>
+<div class="navbar-container container-fluid" >
+
+<ul class="nav-right" >
+  <li>
+<a href="#!" onclick="if (!window.__cfRLUnblockHandlers) return false; javascript:toggleFullScreen()" class="waves-effect waves-light" data-cf-modified-d2d1d6e2f87cbebdf4013b26-="">
+<i class="full-screen feather icon-maximize"></i>
+</a>
+</li>
+
+<li class="user-profile header-notification">
+                                <div class="dropdown-primary dropdown">
+                                    <div class="dropdown-toggle" data-toggle="dropdown">
+                                        
+                                        <span>{{user.username}}</span>
+                                        <i class="feather icon-chevron-down"></i>
+                                    </div>
+                                    <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                                        
+                                        <li>
+                                            <a >
+                                                <i class="feather icon-lock"></i> Change Password
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a >
+                                                <i class="feather icon-log-out"></i> Logout
+                                            </a>
+                                        </li>
+                                    </ul>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class="pcoded-main-container">
+<div class="pcoded-wrapper">
+
+<nav class="pcoded-navbar" style="background-color:#823287">
+<div class="nav-list">
+<div class="pcoded-inner-navbar main-menu" style="background-color:#823287">
+<div class="pcoded-navigation-label">Navigation</div>
+<ul class="pcoded-item pcoded-left-item">
+<li class=" ">
+
+
+
+<a  href="{% url 'file_upload:model_form_upload' %}" class="waves-effect waves-dark">
+<span class="pcoded-micon"><i class="feather icon-loader rotate-refresh"></i></span>
+<span class="pcoded-mtext">File Upload</span>
+</a>
+</li>
+<li class=" ">
+
+<a  href="{% url 'file_upload:home2' %}" class="waves-effect waves-dark">
+<span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Files</span>
+</a>
+</li>
+<li class=" ">
+<a  href="{% url 'file_upload:video_form_upload' %}" class="waves-effect waves-dark">
+<span class="pcoded-micon"><i class="feather icon-loader rotate-refresh"></i></span>
+<span class="pcoded-mtext">Video Upload</span>
+</a>
+</li>
+<li class=" ">
+
+<a  href="{% url 'file_upload:home1' %}" class="waves-effect waves-dark">
+<span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Videos</span>
+</a>
+</li>
+<li class=" ">
+<a  href="{% url 'file_upload:image_form_upload' %}" class="waves-effect waves-dark">
+<span class="pcoded-micon"><i class="feather icon-loader rotate-refresh"></i></span>
+<span class="pcoded-mtext">Image Upload</span>
+</a>
+</li>
+<li class=" ">
+
+<a  href="{% url 'file_upload:home' %}" class="waves-effect waves-dark">
+<span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Images</span>
+</a>
+</li>
+
+
+
+
+
+
+
+
+<li {% block nav_index2%} {% endblock %}>
+
+</nav>
+
+
+<div class="pcoded-content">
+
+<div class="page-header card">
+<div class="row align-items-end">
+<div class="col-lg-8">
+
+<div class="col-lg-4">
+</div>
+</div>
+</div>
+</div>
+
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+
+  {% block content %}
+  {% endblock %}
+</div>
+</div>
+</div>
+</div>
+
+<![endif]-->
+
+
+<script data-cfasync="false" src="{% static 'temp/js/email-decode.min.js' %}"></script><script type="d2d1d6e2f87cbebdf4013b26-text/javascript" src="{% static 'temp/js/jquery.min.js' %}"></script>
+<script type="d2d1d6e2f87cbebdf4013b26-text/javascript" src="{% static 'temp/js/jquery-ui.min.js' %}"></script>
+<script type="d2d1d6e2f87cbebdf4013b26-text/javascript" src="{% static 'temp/js/popper.min.js' %}"></script>
+<script type="d2d1d6e2f87cbebdf4013b26-text/javascript" src="{% static 'temp/js/bootstrap.min.js' %}"></script>
+
+<script src="{% static 'temp/js/waves.min.js' %}" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+
+<script type="d2d1d6e2f87cbebdf4013b26-text/javascript" src="{% static 'temp/js/jquery.slimscroll.js' %}"></script>
+
+<script src="{% static 'temp/js/jquery.flot.js' %}" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+<script src="{% static 'temp/js/jquery.flot.categories.js' %}" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+<script src="{% static 'temp/js/curvedlines.js' %}" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+<script src="{% static 'temp/js/jquery.flot.tooltip.min.js' %}" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+
+<script src="{% static 'temp/js/chartist.js' %}" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+
+<script src="{% static 'temp/js/amcharts.js' %}" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+<script src="{% static 'temp/js/serial.js' %}" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+<script src="{% static 'temp/js/light.js' %}" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+
+<script src="{% static 'temp/js/pcoded.min.js' %}" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+<script src="{% static 'temp/js/vertical-layout.min.js' %}" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+<script type="d2d1d6e2f87cbebdf4013b26-text/javascript" src="{% static 'temp/js/custom-dashboard.min.js' %}"></script>
+<script type="d2d1d6e2f87cbebdf4013b26-text/javascript" src="{% static 'temp/js/script.min.js' %}"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+<script type="d2d1d6e2f87cbebdf4013b26-text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+<script type="text/javascript">
+    document.onkeydown = function(e) {
+if(event.keyCode == 123) {
+return false;
+}
+if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+return false;
+}
+if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+return false;
+}
+if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+return false;
+}
+}
+</script>
+<script src="{% static 'temp/js/rocket-loader.min.js' %}" data-cf-settings="d2d1d6e2f87cbebdf4013b26-|49" defer=""></script>
+</body>
+
+<!-- Mirrored from colorlib.com/polygon/admindek/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Dec 2019 16:08:25 GMT -->
+</html>

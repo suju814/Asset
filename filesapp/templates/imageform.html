@@ -1,0 +1,35 @@
+{% extends 'filesapp/base.html' %}
+
+{% block content %}
+
+  <h2>Person Form</h2>
+
+  <form method="post" id="ImageForm" data-cities-url="{% url 'filesapp:sample_data' %}" novalidate>
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <button type="submit">Save</button>
+    <a href="{% url 'filesapp:person_changelist' %}">Nevermind</a>
+  </form>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    $("#id_country").change(function () {
+      var url = $("#ImageForm").attr("data-cities-url");
+      var category1_id = $(this).val();
+
+      $.ajax({
+        url: url,
+        data: {
+          'category1_id': category1_id
+        },
+        success: function (data) {
+          $("#id_city").html(data);
+        }
+      });
+
+    });
+  </script>
+
+{% endblock %}

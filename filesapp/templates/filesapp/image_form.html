@@ -1,0 +1,71 @@
+{% extends "filesapp/base.html" %}
+{%load crispy_forms_tags %}
+
+{% block content %}
+  <div class="app-content content ">
+      <div class="content-overlay"></div>
+      <div class="header-navbar-shadow"></div>
+      
+        
+        <div class="content-body"><!-- Blog Edit -->
+
+<div class="blog-edit-wrapper">
+  <div class="row">
+    <div class="col-2">
+    </div>
+    <div class="col-8">
+      <div class="card">
+        <div class="card-header">
+          <h4>Image Upload</h4>
+        </div>
+        <div class="card-body">
+          <div class="media">
+            
+            
+          </div>
+          <!-- Form -->
+         <form method="post" enctype="multipart/form-data" id="personForm" data-cities-url="{% url 'filesapp:sample_data' %}" novalidate>
+    {% csrf_token %}
+    <table>
+      <br>
+  <center>
+      {{ form|crispy }}
+    </center>
+      <br><br>
+    </table>
+  </br>
+     <button class="btn btn-info form-control " type="submit" value="submit">Upload</button>
+    
+  </form>
+          <!--/ Form -->
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<!--/ Blog Edit -->
+
+        </div>
+      </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    $("#id_category1").change(function () {
+      var url = $("#personForm").attr("data-cities-url");
+      var countryId = $(this).val();
+
+      $.ajax({
+        url: url,
+        data: {
+          'category1': countryId
+        },
+        success: function (data) {
+          $("#id_sub").html(data);
+        }
+      });
+
+    });
+  </script>
+{% endblock %}
